@@ -12,7 +12,43 @@ npx hardhat node
 npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
 
-# Todo
+## run 
+
+start a local node
+
+```
+npx hardhat node
+npx hardhat compile
+```
+
+deploy all contracts on localhost (you can try to deploy on hardhat or other networks)
+
+```
+npx hardhat ignition deploy ./ignition/modules/AbstractAccountFactory.ts --network localhost
+
+Hardhat Ignition 🚀
+
+Resuming existing deployment from ./ignition/deployments/chain-31337
+
+Deploying [ AbstractAccountFactoryModule ]
+
+Warning - previously executed futures are not in the module:
+ - EntryPointModule#EntryPoint
+ - AbstractAccountModule#AbstractAccount
+
+Batch #1
+  Executed AbstractAccountFactoryModule#AbstractAccountFactory
+
+[ AbstractAccountFactoryModule ] successfully deployed 🚀
+
+Deployed Addresses
+
+EntryPointModule#EntryPoint - 0x5FbDB2315678afecb367f032d93F642f64180aa3
+AbstractAccountModule#AbstractAccount - 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+AbstractAccountFactoryModule#AbstractAccountFactory - 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
+```
+
+## Todo
 
 ```
 $ bun x hardhat compile
