@@ -6,7 +6,8 @@
     "node": "npx hardhat node",
     "compile": "npx hardhat compile",
     "dev": "npx hardhat ignition deploy ./ignition/modules/EntryPoint.ts --network localhost",
-    "dev:aa": "npx hardhat ignition deploy ./ignition/modules/AbstractAccount.ts --network localhost"
+    "dev:aa": "npx hardhat ignition deploy ./ignition/modules/AbstractAccount.ts --network localhost",
+    "dev:aaf": "npx hardhat ignition deploy ./ignition/modules/AbstractAccountFactory.ts --network localhost",
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox-viem": "^3.0.0",
