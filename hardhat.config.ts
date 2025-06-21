@@ -1,5 +1,7 @@
 import type { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox-viem";
+require("@nomicfoundation/hardhat-chai-matchers");
+
 require("dotenv").config();
 
 const config: HardhatUserConfig = {
