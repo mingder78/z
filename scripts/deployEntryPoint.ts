@@ -1,7 +1,6 @@
 import { createPublicClient, http } from "viem";
 import { hardhat } from "viem/chains";
 import { getContract } from "viem";
-import { ethers } from "hardhat";
 
 async function main() {
   // Ensure Hardhat's ethers is properly initialized
@@ -15,7 +14,7 @@ async function main() {
   // Initialize Viem public client for Hardhat network
   const client = createPublicClient({
     chain: hardhat,
-    transport: http("http://127.0.0.1:8545"),
+    transport: http(),
   });
 
   // Deploy EntryPoint contract using Hardhat
@@ -28,7 +27,7 @@ async function main() {
   // Load the ABI from Hardhat artifacts
   const entryPointArtifact = await ethers.getContractFactory("EntryPoint");
   const entryPointAbi = entryPointArtifact.interface;
-
+  console.log(entryPointAbi)
   // Verify deployment with Viem
   const entryPointContract = getContract({
     address: entryPointAddress as `0x${string}`,

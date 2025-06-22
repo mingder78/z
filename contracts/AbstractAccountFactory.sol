@@ -6,7 +6,10 @@ import "./AbstractAccount.sol";
 contract AbstractAccountFactory {
     event AccountCreated(address account, address owner);
 
-    function getAddress(address owner, bytes32 salt) public view returns (address) {
+    function getAddress(
+        address owner,
+        bytes32 salt
+    ) public view returns (address) {
         bytes memory bytecode = getBytecode(owner);
         bytes32 hash = keccak256(
             abi.encodePacked(
@@ -19,7 +22,10 @@ contract AbstractAccountFactory {
         return address(uint160(uint(hash)));
     }
 
-    function createAccount(address owner, bytes32 salt) public returns (address) {
+    function createAccount(
+        address owner,
+        bytes32 salt
+    ) public returns (address) {
         address accountAddr = getAddress(owner, salt);
         if (isContract(accountAddr)) return accountAddr;
 
@@ -37,11 +43,14 @@ contract AbstractAccountFactory {
     }
 
     function getBytecode(address owner) public pure returns (bytes memory) {
-        return abi.encodePacked(type(AbstractAccount).creationCode, abi.encode(owner));
+        return
+            abi.encodePacked(
+                type(AbstractAccount).creationCode,
+                abi.encode(owner)
+            );
     }
 
     function isContract(address account) internal view returns (bool) {
         return account.code.length > 0;
     }
 }
-

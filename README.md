@@ -37,6 +37,8 @@ start a local node
 npx hardhat node
 ```
 
+## deployment and verification
+
 manually deploy all contracts on localhost (you can try to deploy on hardhat or other networks)
 
 ```
@@ -64,7 +66,26 @@ AbstractAccountModule#AbstractAccount - 0xe7f1725E7734CE288F8367e1Bb143E90bb3F05
 AbstractAccountFactoryModule#AbstractAccountFactory - 0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0
 ```
 
+### use tenderly
+
+on sepolia testnet
+
+```
+TENDERLY_AUTOMATIC_VERIFICATION=true bun dev:aaf --network sepolia --deployment-id sepolia-ming
+$ bun x hardhat ignition deploy ./ignition/modules/AbstractAccountFactory.ts  --network sepolia --deployment-id sepolia-ming
+2025-06-22 02:06:09.771 WARN Service =>Tenderly config doesn't exist, empty string values are returned instead.
+✔ Confirm deploy to network sepolia (11155111)? … yes
+[ AbstractAccountFactoryModule ] Nothing new to deploy based on previous execution stored in ./ignition/deployments/sepolia-ming
+
+Deployed Addresses
+
+EntryPointModule#EntryPoint - 0x64e4476B8a75E66FA31c198b702a3C6784CEf29e
+AbstractAccountModule#AbstractAccount - 0xdC1a6BBD3ba8099fa9880e96ebCa55F8066A874f
+AbstractAccountFactoryModule#AbstractAccountFactory - 0xc4D2CADcCeeABFf3F3D4E39B4E0f9A9E050eDb04
+```
+
 ## Todo
+
 
 ```
 $ bun x hardhat compile
