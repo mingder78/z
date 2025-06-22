@@ -2,8 +2,11 @@ import type { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox-viem";
 import "@nomicfoundation/hardhat-chai-matchers";
 import "@tenderly/hardhat-tenderly";
+import "@nomicfoundation/hardhat-verify";
+
 import * as dotenv from "dotenv";
 dotenv.config();
+
  
 const config: HardhatUserConfig = {
   networks: {
@@ -27,6 +30,14 @@ const config: HardhatUserConfig = {
     username: "mingderwang2",
     privateVerification: false, // Public verification
   },
+  etherscan: {
+    apiKey: {
+      sepolia: process.env.ETHERSCAN_API_KEY, // Replace with your Etherscan API key
+    },
+  },
 };
+
+console.log("Tenderly Config:", config.tenderly); // Debug log
+
 
 export default config;

@@ -1,11 +1,11 @@
 {
   "name": "hardhat-project",
   "description": "deploy EntryPoint, Abstract Account Factory, and test",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "node": "npx hardhat node",
     "compile": "npx hardhat compile",
-    "dev": "npx hardhat ignition deploy ./ignition/modules/EntryPoint.ts ",
+    "dev": "npx hardhat ignition deploy ./ignition/modules/EntryPoint.ts --verify",
     "dev:aa": "npx hardhat ignition deploy ./ignition/modules/AbstractAccount.ts ",
     "dev:aaf": "npx hardhat ignition deploy ./ignition/modules/AbstractAccountFactory.ts "
   },

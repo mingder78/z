@@ -84,6 +84,29 @@ AbstractAccountModule#AbstractAccount - 0xdC1a6BBD3ba8099fa9880e96ebCa55F8066A87
 AbstractAccountFactoryModule#AbstractAccountFactory - 0xc4D2CADcCeeABFf3F3D4E39B4E0f9A9E050eDb04
 ```
 
+### use Etherscan
+
+```
+bun x hardhat verify --network sepolia 0xdC1a6BBD3ba8099fa9880e96ebCa55F8066A874f "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"
+2025-06-22 02:31:18.134 WARN Service =>Tenderly config doesn't exist, empty string values are returned instead.
+[INFO] Sourcify Verification Skipped: Sourcify verification is currently disabled. To enable it, add the following entry to your Hardhat configuration:
+
+sourcify: {
+  enabled: true
+}
+
+Or set 'enabled' to false to hide this message.
+
+For more information, visit https://hardhat.org/hardhat-runner/plugins/nomicfoundation-hardhat-verify#verifying-on-sourcify
+[WARNING] Network and explorer-specific api keys are deprecated in favour of the new Etherscan v2 api. Support for v1 is expected to end by May 31st, 2025. To migrate, please specify a single Etherscan.io api key the apiKey config value.
+Successfully submitted source code for contract
+contracts/AbstractAccount.sol:AbstractAccount at 0xdC1a6BBD3ba8099fa9880e96ebCa55F8066A874f
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract AbstractAccount on the block explorer.
+https://sepolia.etherscan.io/address/0xdC1a6BBD3ba8099fa9880e96ebCa55F8066A874f#code
+```
+
 ## Todo
 
 
